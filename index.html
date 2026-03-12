@@ -300,6 +300,37 @@ footer{background:var(--navy);color:rgba(255,255,255,0.6);padding:3rem 2rem;}
 .footer-bottom{border-top:1px solid rgba(255,255,255,0.1);margin-top:2rem;padding-top:1.5rem;max-width:1100px;margin:2rem auto 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:0.82rem;}
 .footer-bottom span{color:var(--gold);}
 
+/* ── IMAGE SLIDER ── */
+.slider{position:relative;height:92vh;min-height:560px;overflow:hidden;}
+.slide{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1s ease;}
+.slide.active{opacity:1;}
+.slider-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(13,27,42,0.85),rgba(183,28,28,0.5));z-index:1;}
+.slider-content{position:absolute;inset:0;z-index:2;display:flex;align-items:center;justify-content:center;text-align:center;padding:2rem;}
+.slider-dots{position:absolute;bottom:5rem;left:50%;transform:translateX(-50%);z-index:3;display:flex;gap:8px;}
+.slider-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.4);border:none;cursor:pointer;transition:background 0.3s;}
+.slider-dot.active{background:var(--gold);}
+
+/* ── MAP ── */
+.map-section{background:var(--navy);padding:4rem 2rem;text-align:center;}
+.map-section .section-label{color:var(--gold);}
+.map-section h2{font-family:'Playfair Display',serif;font-size:2rem;color:#fff;margin-bottom:0.5rem;}
+.map-section p{color:rgba(255,255,255,0.6);margin-bottom:2rem;}
+.map-section iframe{border-radius:8px;box-shadow:0 8px 40px rgba(0,0,0,0.4);max-width:1100px;width:100%;}
+
+/* ── WHATSAPP FLOAT ── */
+.wa-float{
+  position:fixed;bottom:25px;right:25px;z-index:9999;
+  background:#25D366;color:#fff;
+  padding:14px 20px;border-radius:50px;
+  text-decoration:none;font-family:'Lato',sans-serif;
+  font-weight:700;font-size:0.95rem;
+  box-shadow:0 4px 20px rgba(37,211,102,0.5);
+  display:flex;align-items:center;gap:8px;
+  transition:all 0.3s;
+}
+.wa-float:hover{background:#1DA851;transform:translateY(-3px);box-shadow:0 8px 30px rgba(37,211,102,0.6);}
+.wa-float-icon{font-size:1.3rem;}
+
 /* ── MOBILE ── */
 @media(max-width:768px){
   .nav{padding:0 1rem;}
@@ -344,23 +375,32 @@ footer{background:var(--navy);color:rgba(255,255,255,0.6);padding:3rem 2rem;}
 <!-- ══════════ HOME PAGE ══════════ -->
 <div id="page-home" class="page active">
 
-  <section class="hero">
-    <div class="hero-content">
-      <div class="hero-logo-circle">
-        <img src="images/logo-kridens-high.jpg" alt="Kridens Logo"/>
-      </div>
-      <h1 class="hero-title">Kridens<span>-Early Childhood</span><br>Schools</h1>
-      <p class="hero-tagline">Nurturing minds · Building futures · Reaching the Heights</p>
-      <div class="hero-btns">
-        <button class="btn-primary" onclick="showPage('programs')">Explore Programs</button>
-        <button class="btn-outline" onclick="showPage('contact')">Enroll Now</button>
+  <div class="slider">
+    <img class="slide active" src="images/hero-campus-view.jpg" alt="Campus"/>
+    <img class="slide" src="images/classroom-teaching.png" alt="Classroom"/>
+    <img class="slide" src="images/hero-children.png" alt="Children"/>
+    <img class="slide" src="images/science-lab.jpg" alt="Science Lab"/>
+    <div class="slider-overlay"></div>
+    <div class="slider-content">
+      <div class="hero-content">
+        <div class="hero-logo-circle">
+          <img src="images/logo-kridens-high.jpg" alt="Kridens Logo"/>
+        </div>
+        <h1 class="hero-title">Kridens<span>-Early Childhood</span><br>Schools</h1>
+        <p class="hero-tagline">Nurturing minds · Building futures · Reaching the Heights</p>
+        <div class="hero-btns">
+          <button class="btn-primary" onclick="showPage('programs')">Explore Programs</button>
+          <button class="btn-outline" onclick="showPage('contact')">Enroll Now</button>
+        </div>
       </div>
     </div>
-    <div class="hero-scroll">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
+    <div class="slider-dots">
+      <button class="slider-dot active" onclick="goToSlide(0)"></button>
+      <button class="slider-dot" onclick="goToSlide(1)"></button>
+      <button class="slider-dot" onclick="goToSlide(2)"></button>
+      <button class="slider-dot" onclick="goToSlide(3)"></button>
     </div>
-  </section>
+  </div>
 
 
 
@@ -874,6 +914,19 @@ footer{background:var(--navy);color:rgba(255,255,255,0.6);padding:3rem 2rem;}
     </div>
   </section>
 
+  <section class="map-section">
+    <div class="section-label">Find Us</div>
+    <h2>Our Location</h2>
+    <p>Kridens Avenue, Igbatoro, Akure, Ondo State</p>
+    <iframe
+      src="https://maps.google.com/maps?q=Igbatoro+Akure+Ondo+State&t=&z=14&ie=UTF8&iwloc=&output=embed"
+      height="380"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy">
+    </iframe>
+  </section>
+
   <footer>
     <div class="footer-inner">
       <div class="footer-brand">
@@ -902,6 +955,11 @@ footer{background:var(--navy);color:rgba(255,255,255,0.6);padding:3rem 2rem;}
   </footer>
 </div>
 
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/2348035039275" class="wa-float" target="_blank">
+  <span class="wa-float-icon">💬</span> WhatsApp Us
+</a>
+
 <script>
 function showPage(id){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
@@ -929,6 +987,26 @@ function submitForm(){
   msg.style.display='block';
   setTimeout(()=>msg.style.display='none',6000);
 }
+
+// Image Slider
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.slider-dot');
+
+function goToSlide(n){
+  slides[currentSlide].classList.remove('active');
+  dots[currentSlide].classList.remove('active');
+  currentSlide = n;
+  slides[currentSlide].classList.add('active');
+  dots[currentSlide].classList.add('active');
+}
+
+function nextSlide(){
+  let next = (currentSlide + 1) % slides.length;
+  goToSlide(next);
+}
+
+setInterval(nextSlide, 4500);
 </script>
 </body>
 </html>
