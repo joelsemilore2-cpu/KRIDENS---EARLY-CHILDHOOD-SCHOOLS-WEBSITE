@@ -1,531 +1,934 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Kridens Early Childhood Schools | Akure</title>
-
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Kridens-Early Childhood Schools | Akure, Ondo State</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Lato:wght@300;400;700&family=Cinzel:wght@400;600&display=swap" rel="stylesheet"/>
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Segoe UI, sans-serif;
-}
-
+*{margin:0;padding:0;box-sizing:border-box;}
 :root{
---blue:#1e3a8a;
---gold:#f59e0b;
---green:#10b981;
---light:#f8fafc;
+  --crimson:#B71C1C;
+  --crimson-dark:#7B0000;
+  --gold:#C9A227;
+  --gold-light:#F0D060;
+  --navy:#0D1B2A;
+  --navy-mid:#1A2E45;
+  --cream:#FDF8F0;
+  --warm-white:#FFFDF9;
+  --text:#1a1a1a;
+  --text-muted:#555;
 }
+html{scroll-behavior:smooth;}
+body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;}
 
-body{
-line-height:1.6;
-overflow-x:hidden;
+/* ── NAV ── */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  background:rgba(13,27,42,0.97);backdrop-filter:blur(12px);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 3rem;height:72px;
+  border-bottom:2px solid var(--gold);
+  transition:all 0.3s;
 }
-
-/* NAV */
-
-nav{
-position:fixed;
-top:0;
-width:100%;
-background:white;
-box-shadow:0 2px 10px rgba(0,0,0,0.1);
-z-index:1000;
+.nav-brand{display:flex;align-items:center;gap:14px;cursor:pointer;}
+.nav-logo-img{height:46px;width:46px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);}
+.nav-brand-text{display:flex;flex-direction:column;line-height:1.1;}
+.nav-brand-name{font-family:'Cinzel',serif;font-size:1rem;color:var(--gold);letter-spacing:1px;font-weight:600;}
+.nav-brand-sub{font-size:0.65rem;color:rgba(255,255,255,0.6);letter-spacing:2px;text-transform:uppercase;}
+.nav-links{display:flex;gap:0.2rem;}
+.nav-links button{
+  font-family:'Lato',sans-serif;font-size:0.9rem;font-weight:700;
+  letter-spacing:1.5px;text-transform:uppercase;
+  border:none;background:transparent;cursor:pointer;
+  color:rgba(255,255,255,0.8);padding:0.5rem 1.1rem;border-radius:4px;
+  transition:all 0.2s;
 }
+.nav-links button:hover{color:var(--gold);background:rgba(201,162,39,0.1);}
+.nav-links button.active{color:var(--gold);border-bottom:2px solid var(--gold);}
+.mobile-menu-btn{display:none;background:none;border:none;cursor:pointer;color:var(--gold);font-size:1.8rem;}
 
-.nav-container{
-max-width:1200px;
-margin:auto;
-padding:15px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
+/* ── PAGES ── */
+.page{display:none;padding-top:72px;min-height:100vh;}
+.page.active{display:block;animation:fadeUp 0.5s ease;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 
-.logo{
-display:flex;
-align-items:center;
-gap:10px;
-}
-
-.logo img{
-height:55px;
-}
-
-.nav-links{
-display:flex;
-gap:25px;
-list-style:none;
-}
-
-.nav-links a{
-text-decoration:none;
-color:#333;
-font-weight:600;
-}
-
-.mobile-menu{
-display:none;
-cursor:pointer;
-font-size:24px;
-}
-
-/* HERO */
-
+/* ── HOME HERO ── */
 .hero{
-margin-top:80px;
-min-height:90vh;
-
-background:
-linear-gradient(rgba(30,58,138,.8),rgba(30,58,138,.6)),
-url("images/hero-campus-view.jpg");
-
-background-size:cover;
-background-position:center;
-
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-color:white;
+  position:relative;height:92vh;min-height:560px;
+  background:linear-gradient(rgba(13,27,42,0.88),rgba(183,28,28,0.55)),
+  url('images/hero-campus-view.jpg') center/cover no-repeat;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;overflow:hidden;
 }
-
-.hero-content{
-max-width:850px;
-padding:30px;
+.hero-content{position:relative;z-index:2;padding:2rem;max-width:900px;}
+.hero-badge{
+  display:inline-block;border:1px solid var(--gold);
+  color:var(--gold);font-family:'Cinzel',serif;
+  font-size:0.75rem;letter-spacing:4px;text-transform:uppercase;
+  padding:0.4rem 1.5rem;border-radius:2px;margin-bottom:1.5rem;
 }
-
-.hero-logo{
-width:120px;
-margin-bottom:20px;
-background:white;
-border-radius:50%;
-padding:10px;
+.hero-logo-circle{
+  width:110px;height:110px;border-radius:50%;
+  border:3px solid var(--gold);overflow:hidden;
+  margin:0 auto 1.5rem;background:white;padding:5px;
 }
-
-.hero h2{
-font-size:3rem;
-margin-bottom:10px;
+.hero-logo-circle img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
+.hero-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2.8rem,7vw,5rem);
+  color:#fff;line-height:1.05;font-weight:900;
+  text-shadow:2px 4px 20px rgba(0,0,0,0.5);
+  margin-bottom:0.5rem;
 }
-
-.hero p{
-font-size:1.2rem;
-margin-bottom:25px;
+.hero-title span{color:var(--gold-light);}
+.hero-tagline{
+  font-size:clamp(1rem,2vw,1.2rem);color:rgba(255,255,255,0.88);
+  font-weight:300;letter-spacing:2px;margin-bottom:2.5rem;
+  font-style:italic;
 }
-
-.btn{
-padding:14px 28px;
-border:none;
-border-radius:30px;
-text-decoration:none;
-font-weight:600;
-display:inline-block;
-}
-
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
 .btn-primary{
-background:var(--gold);
-color:white;
+  font-family:'Lato',sans-serif;font-weight:700;font-size:0.9rem;
+  letter-spacing:2px;text-transform:uppercase;
+  padding:1rem 2.5rem;background:var(--gold);color:var(--navy);
+  border:none;border-radius:3px;cursor:pointer;
+  box-shadow:0 4px 20px rgba(201,162,39,0.4);
+  transition:all 0.25s;
 }
-
-.btn-secondary{
-border:2px solid white;
-color:white;
+.btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);}
+.btn-outline{
+  font-family:'Lato',sans-serif;font-weight:700;font-size:0.9rem;
+  letter-spacing:2px;text-transform:uppercase;
+  padding:1rem 2.5rem;background:transparent;color:#fff;
+  border:2px solid rgba(255,255,255,0.6);border-radius:3px;cursor:pointer;
+  transition:all 0.25s;text-decoration:none;display:inline-block;
 }
-
-/* SECTIONS */
-
-section{
-padding:70px 20px;
+.btn-outline:hover{border-color:#fff;background:rgba(255,255,255,0.1);transform:translateY(-2px);}
+.hero-scroll{
+  position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);
+  z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;
 }
+.hero-scroll span{color:rgba(255,255,255,0.5);font-size:0.7rem;letter-spacing:3px;text-transform:uppercase;}
+.scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,rgba(255,255,255,0.5),transparent);animation:scrollPulse 2s ease infinite;}
+@keyframes scrollPulse{0%,100%{opacity:0.3}50%{opacity:1}}
 
-.container{
-max-width:1200px;
-margin:auto;
+/* ── STATS BAR ── */
+.stats-bar{
+  background:var(--navy);padding:2.5rem 2rem;
+  display:flex;flex-wrap:wrap;justify-content:center;gap:0;
 }
-
-.section-title{
-text-align:center;
-font-size:2.4rem;
-color:var(--blue);
-margin-bottom:15px;
+.stat-item{
+  text-align:center;padding:1rem 3rem;
+  border-right:1px solid rgba(201,162,39,0.3);
 }
+.stat-item:last-child{border-right:none;}
+.stat-num{font-family:'Playfair Display',serif;font-size:2.5rem;color:var(--gold);font-weight:700;}
+.stat-label{font-size:0.8rem;color:rgba(255,255,255,0.6);letter-spacing:2px;text-transform:uppercase;margin-top:4px;}
 
-.section-subtitle{
-text-align:center;
-margin-bottom:40px;
-color:#666;
+/* ── GENERAL SECTION ── */
+.section{padding:5rem 2rem;}
+.section-inner{max-width:1200px;margin:0 auto;}
+.section-label{font-size:0.75rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:0.8rem;}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);color:var(--navy);line-height:1.15;margin-bottom:1rem;}
+.section-title span{color:var(--crimson);}
+.section-divider{width:60px;height:3px;background:linear-gradient(to right,var(--gold),var(--crimson));margin-bottom:2rem;border-radius:2px;}
+
+/* ── WINGS ── */
+.wings{background:var(--warm-white);}
+.wings-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:1100px;margin:2rem auto 0;}
+.wing-card{border-radius:8px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.12);transition:transform 0.3s,box-shadow 0.3s;}
+.wing-card:hover{transform:translateY(-6px);box-shadow:0 16px 50px rgba(0,0,0,0.18);}
+.wing-banner{height:220px;position:relative;overflow:hidden;}
+.wing-banner img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s;}
+.wing-card:hover .wing-banner img{transform:scale(1.05);}
+.wing-banner-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(13,27,42,0.85),transparent);display:flex;align-items:flex-end;padding:1.5rem;}
+.wing-banner-title{font-family:'Playfair Display',serif;font-size:1.4rem;color:#fff;font-weight:700;}
+.wing-body{background:#fff;padding:1.8rem;}
+.wing-motto{font-family:'Playfair Display',serif;font-style:italic;font-size:1rem;color:var(--gold);margin-bottom:1rem;border-left:3px solid var(--gold);padding-left:1rem;}
+.wing-desc{font-size:0.95rem;line-height:1.7;color:var(--text-muted);margin-bottom:1.2rem;}
+.wing-tags{display:flex;flex-wrap:wrap;gap:0.5rem;}
+.tag{padding:0.3rem 0.9rem;border-radius:2px;font-size:0.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;}
+.tag-red{background:#FFF0F0;color:var(--crimson);border:1px solid var(--crimson);}
+.tag-gold{background:#FFFBF0;color:#8B6914;border:1px solid var(--gold);}
+
+/* ── WHY ── */
+.why{background:var(--cream);}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;margin-top:2rem;}
+.why-card{background:#fff;padding:2rem;border-radius:6px;border-top:4px solid var(--gold);box-shadow:0 4px 20px rgba(0,0,0,0.07);transition:transform 0.2s,box-shadow 0.2s;}
+.why-card:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,0.12);}
+.why-icon{font-size:2.2rem;margin-bottom:1rem;}
+.why-title{font-family:'Playfair Display',serif;font-size:1.15rem;margin-bottom:0.6rem;color:var(--navy);}
+.why-desc{font-size:0.9rem;line-height:1.7;color:var(--text-muted);}
+
+/* ── GALLERY STRIP ── */
+.gallery-strip{background:var(--navy);overflow:hidden;}
+.gallery-strip-inner{display:grid;grid-template-columns:repeat(4,1fr);}
+.gallery-item{aspect-ratio:4/3;overflow:hidden;position:relative;cursor:pointer;}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s;filter:brightness(0.85);}
+.gallery-item:hover img{transform:scale(1.08);filter:brightness(1);}
+.gallery-item-label{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(13,27,42,0.9),transparent);color:#fff;font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;padding:1.5rem 1rem 0.8rem;opacity:0;transition:opacity 0.3s;}
+.gallery-item:hover .gallery-item-label{opacity:1;}
+
+/* ── CTA BAND ── */
+.cta-band{background:linear-gradient(135deg,var(--crimson-dark),var(--crimson));padding:4rem 2rem;text-align:center;}
+.cta-band h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);color:#fff;margin-bottom:1rem;}
+.cta-band p{color:rgba(255,255,255,0.85);max-width:560px;margin:0 auto 2rem;line-height:1.7;}
+
+/* ── PAGE HERO (reusable) ── */
+.page-hero{
+  height:50vh;min-height:360px;position:relative;
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  background-size:cover;background-position:center;
 }
+.page-hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(13,27,42,0.92),rgba(183,28,28,0.6));}
+.page-hero-content{position:relative;z-index:2;padding:2rem;}
+.page-hero-content h1{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,6vw,4.5rem);color:#fff;text-shadow:2px 4px 20px rgba(0,0,0,0.5);}
+.page-hero-content p{color:var(--gold-light);font-size:1.1rem;letter-spacing:2px;margin-top:0.5rem;font-style:italic;}
 
-/* ABOUT */
+/* ── ABOUT STORY ── */
+.about-story{background:var(--warm-white);padding:5rem 2rem;}
+.about-story-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:1100px;margin:0 auto;}
+.about-story-img{border-radius:8px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,0.15);}
+.about-story-img img{width:100%;height:380px;object-fit:cover;display:block;}
+.about-story-text p{line-height:1.8;color:var(--text-muted);margin-bottom:1.2rem;font-size:0.95rem;}
 
-.about{
-background:var(--light);
-}
+/* ── MOTTOS ── */
+.mottos{background:var(--navy);padding:4rem 2rem;}
+.mottos-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:900px;margin:0 auto;}
+.motto-card{border:1px solid rgba(201,162,39,0.3);border-radius:6px;padding:2.5rem;text-align:center;background:rgba(255,255,255,0.04);transition:border-color 0.3s,background 0.3s;}
+.motto-card:hover{border-color:var(--gold);background:rgba(201,162,39,0.06);}
+.motto-school{font-family:'Cinzel',serif;font-size:0.8rem;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:1rem;}
+.motto-text{font-family:'Playfair Display',serif;font-size:1.8rem;color:#fff;font-style:italic;line-height:1.3;}
+.motto-line{width:40px;height:2px;background:var(--gold);margin:1rem auto 0;}
 
-.about-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:30px;
-}
+/* ── VALUES ── */
+.values{background:var(--cream);padding:5rem 2rem;}
+.values-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin-top:2rem;}
+.value-card{background:#fff;padding:2rem;border-radius:6px;box-shadow:0 4px 20px rgba(0,0,0,0.07);display:flex;gap:1.2rem;align-items:flex-start;border-left:4px solid var(--crimson);transition:transform 0.2s,box-shadow 0.2s;}
+.value-card:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,0.12);}
+.value-num{font-family:'Playfair Display',serif;font-size:2rem;color:var(--crimson);font-weight:900;line-height:1;opacity:0.3;flex-shrink:0;}
+.value-text h4{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--navy);margin-bottom:0.4rem;}
+.value-text p{font-size:0.88rem;line-height:1.65;color:var(--text-muted);}
 
-.about-card{
-background:white;
-padding:30px;
-border-radius:12px;
-text-align:center;
-box-shadow:0 4px 12px rgba(0,0,0,0.08);
-}
+/* ── MONTESSORI ── */
+.montessori-section{background:linear-gradient(135deg,var(--navy),var(--navy-mid));padding:5rem 2rem;}
+.montessori-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:1100px;margin:0 auto;}
+.montessori-img{border-radius:8px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,0.3);}
+.montessori-img img{width:100%;height:360px;object-fit:cover;display:block;}
+.montessori-text p{color:rgba(255,255,255,0.75);line-height:1.8;font-size:0.95rem;margin-bottom:1rem;}
+.montessori-pillars{display:flex;flex-direction:column;gap:0.8rem;margin-top:1.5rem;}
+.pillar{display:flex;align-items:center;gap:0.8rem;}
+.pillar-dot{width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+.pillar span{color:rgba(255,255,255,0.85);font-size:0.9rem;}
 
-.about-card img{
-width:110px;
-margin-bottom:15px;
-}
+/* ── PROGRAMS ── */
+.ecms-section{background:var(--cream);padding:5rem 2rem;}
+.ecms-header{background:var(--navy);border-radius:8px;padding:2.5rem;display:flex;align-items:center;gap:2rem;margin-bottom:2.5rem;flex-wrap:wrap;}
+.ecms-logo-wrap img{height:90px;width:90px;border-radius:50%;object-fit:cover;border:3px solid var(--gold);}
+.ecms-header-text h2{font-family:'Playfair Display',serif;font-size:1.8rem;color:#fff;}
+.ecms-header-text p{color:var(--gold-light);margin-top:0.3rem;font-style:italic;}
+.levels-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem;max-width:1100px;margin:0 auto;}
+.level-card{background:#fff;border-radius:6px;padding:1.8rem 1.5rem;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,0.07);border-top:4px solid var(--gold);transition:transform 0.2s,box-shadow 0.2s;}
+.level-card:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,0.12);}
+.level-icon{font-size:2.5rem;margin-bottom:0.8rem;}
+.level-name{font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--navy);margin-bottom:0.5rem;}
+.level-ages{font-size:0.8rem;color:var(--gold);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:0.6rem;}
+.level-desc{font-size:0.85rem;line-height:1.6;color:var(--text-muted);}
 
-/* PROGRAMS */
+.high-section{background:var(--navy);padding:5rem 2rem;}
+.high-header{display:flex;align-items:center;gap:2rem;margin-bottom:3rem;flex-wrap:wrap;}
+.high-logo-wrap img{height:90px;width:90px;border-radius:50%;object-fit:cover;border:3px solid var(--crimson);}
+.high-header-text h2{font-family:'Playfair Display',serif;font-size:1.8rem;color:#fff;}
+.high-header-text p{color:var(--gold-light);margin-top:0.3rem;font-style:italic;}
+.high-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto;}
+.high-card{border-radius:8px;overflow:hidden;box-shadow:0 4px 30px rgba(0,0,0,0.3);transition:transform 0.3s;}
+.high-card:hover{transform:translateY(-5px);}
+.high-card-img{height:180px;overflow:hidden;}
+.high-card-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s;filter:brightness(0.9);}
+.high-card:hover .high-card-img img{transform:scale(1.06);filter:brightness(1);}
+.high-card-body{background:rgba(255,255,255,0.06);padding:1.5rem;border:1px solid rgba(255,255,255,0.08);border-top:none;}
+.high-card-body h3{font-family:'Playfair Display',serif;font-size:1.15rem;color:#fff;margin-bottom:0.5rem;}
+.high-card-body p{font-size:0.88rem;line-height:1.65;color:rgba(255,255,255,0.65);}
 
-.programs-container{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(330px,1fr));
-gap:30px;
-}
+/* ── FACILITIES ── */
+.facilities{background:var(--warm-white);padding:5rem 2rem;}
+.facilities-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;max-width:1200px;margin:2rem auto 0;}
+.facility-card{border-radius:8px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.1);transition:transform 0.3s,box-shadow 0.3s;}
+.facility-card:hover{transform:translateY(-5px);box-shadow:0 12px 40px rgba(0,0,0,0.15);}
+.facility-img{height:200px;overflow:hidden;}
+.facility-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s;}
+.facility-card:hover .facility-img img{transform:scale(1.06);}
+.facility-body{background:#fff;padding:1.5rem;}
+.facility-body h3{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--navy);margin-bottom:0.4rem;}
+.facility-body p{font-size:0.85rem;line-height:1.6;color:var(--text-muted);}
 
-.program-card{
-background:white;
-border-radius:12px;
-overflow:hidden;
-box-shadow:0 8px 20px rgba(0,0,0,0.1);
-}
+/* ── CONTACT ── */
+.contact-body{background:var(--warm-white);padding:5rem 2rem;}
+.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:4rem;max-width:1100px;margin:0 auto;}
+.contact-info-block h2{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--navy);margin-bottom:2rem;}
+.info-item{display:flex;gap:1.2rem;margin-bottom:1.8rem;align-items:flex-start;}
+.info-icon{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--crimson),var(--crimson-dark));display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;color:#fff;}
+.info-text h4{font-family:'Playfair Display',serif;font-size:1rem;color:var(--navy);margin-bottom:0.25rem;}
+.info-text p{font-size:0.9rem;color:var(--text-muted);line-height:1.6;}
+.wa-btn{display:flex;align-items:center;gap:0.8rem;background:#25D366;color:#fff;padding:1rem 1.8rem;border-radius:50px;border:none;cursor:pointer;font-family:'Lato',sans-serif;font-weight:700;font-size:1rem;box-shadow:0 4px 20px rgba(37,211,102,0.4);transition:all 0.25s;margin-top:1.5rem;width:fit-content;text-decoration:none;}
+.wa-btn:hover{background:#1DA851;transform:translateY(-2px);}
+.contact-form-wrap{background:#fff;border-radius:8px;padding:2.5rem;box-shadow:0 8px 40px rgba(0,0,0,0.1);}
+.contact-form-wrap h2{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--navy);margin-bottom:1.8rem;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;}
+.form-group{margin-bottom:1rem;}
+.form-group label{display:block;font-size:0.8rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--navy);margin-bottom:0.4rem;}
+.form-group input,.form-group textarea,.form-group select{width:100%;padding:0.85rem 1rem;border:1.5px solid #e0e0e0;border-radius:4px;font-family:'Lato',sans-serif;font-size:0.95rem;background:#FAFAFA;outline:none;transition:border-color 0.2s,box-shadow 0.2s;}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--crimson);box-shadow:0 0 0 3px rgba(183,28,28,0.1);background:#fff;}
+.form-group textarea{resize:vertical;min-height:120px;}
+.form-submit{font-family:'Lato',sans-serif;font-weight:700;font-size:0.9rem;letter-spacing:2px;text-transform:uppercase;width:100%;padding:1rem;background:linear-gradient(135deg,var(--crimson),var(--crimson-dark));color:#fff;border:none;border-radius:4px;cursor:pointer;box-shadow:0 4px 20px rgba(183,28,28,0.3);transition:all 0.25s;margin-top:0.5rem;}
+.form-submit:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(183,28,28,0.4);}
+.success-msg{display:none;background:#F0FFF4;border:1.5px solid #48BB78;color:#276749;border-radius:4px;padding:1rem;text-align:center;font-weight:700;margin-top:1rem;}
 
-.program-card img{
-width:100%;
-height:220px;
-object-fit:cover;
-}
+/* ── FOOTER ── */
+footer{background:var(--navy);color:rgba(255,255,255,0.6);padding:3rem 2rem;}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;}
+.footer-brand img{height:60px;width:60px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);margin-bottom:1rem;}
+.footer-brand h3{font-family:'Cinzel',serif;color:var(--gold);font-size:1rem;letter-spacing:1px;margin-bottom:0.5rem;}
+.footer-brand p{font-size:0.85rem;line-height:1.7;}
+.footer-col h4{font-family:'Playfair Display',serif;color:#fff;font-size:1rem;margin-bottom:1rem;border-bottom:1px solid rgba(201,162,39,0.3);padding-bottom:0.5rem;}
+.footer-col ul{list-style:none;}
+.footer-col ul li{margin-bottom:0.5rem;}
+.footer-col ul li button{background:none;border:none;cursor:pointer;color:rgba(255,255,255,0.6);font-size:0.88rem;transition:color 0.2s;font-family:'Lato',sans-serif;}
+.footer-col ul li button:hover{color:var(--gold);}
+.footer-col p{font-size:0.85rem;line-height:1.8;}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.1);margin-top:2rem;padding-top:1.5rem;max-width:1100px;margin:2rem auto 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:0.82rem;}
+.footer-bottom span{color:var(--gold);}
 
-.program-content{
-padding:25px;
-}
-
-/* FACILITIES */
-
-.facilities-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:25px;
-}
-
-.facility-card{
-height:250px;
-overflow:hidden;
-border-radius:10px;
-position:relative;
-}
-
-.facility-card img{
-width:100%;
-height:100%;
-object-fit:cover;
-}
-
-.facility-overlay{
-position:absolute;
-bottom:0;
-width:100%;
-padding:20px;
-color:white;
-background:linear-gradient(transparent,rgba(0,0,0,0.8));
-}
-
-/* CONTACT */
-
-.contact{
-background:var(--light);
-}
-
-.contact-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:30px;
-}
-
-.contact-box{
-background:white;
-padding:30px;
-border-radius:12px;
-box-shadow:0 4px 12px rgba(0,0,0,0.08);
-}
-
-/* FOOTER */
-
-footer{
-background:#0f172a;
-color:white;
-padding:40px 20px;
-text-align:center;
-}
-
-/* MOBILE */
-
+/* ── MOBILE ── */
 @media(max-width:768px){
-
-.nav-links{
-display:none;
-flex-direction:column;
-background:white;
-position:absolute;
-top:70px;
-right:0;
-width:200px;
-padding:20px;
+  .nav{padding:0 1rem;}
+  .nav-links{display:none;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:rgba(13,27,42,0.98);padding:1rem;border-bottom:2px solid var(--gold);}
+  .nav-links.open{display:flex;}
+  .nav-links button{padding:0.8rem 1rem;text-align:left;border-radius:4px;}
+  .mobile-menu-btn{display:block;}
+  .nav-brand-name{font-size:0.8rem;}
+  .wings-grid{grid-template-columns:1fr;}
+  .about-story-grid{grid-template-columns:1fr;}
+  .montessori-grid{grid-template-columns:1fr;}
+  .contact-grid{grid-template-columns:1fr;}
+  .mottos-grid{grid-template-columns:1fr;}
+  .footer-inner{grid-template-columns:1fr;}
+  .form-row{grid-template-columns:1fr;}
+  .gallery-strip-inner{grid-template-columns:repeat(2,1fr);}
+  .stat-item{padding:1rem 1.5rem;}
+  .hero-title{font-size:2.2rem;}
 }
-
-.mobile-menu{
-display:block;
-}
-
-.hero h2{
-font-size:2rem;
-}
-
-}
-
 </style>
 </head>
-
 <body>
 
-<nav>
-<div class="nav-container">
-
-<div class="logo">
-<img src="images/logo-ecms.jpg" alt="Kridens Logo">
-<strong>Kridens Schools</strong>
-</div>
-
-<div class="mobile-menu">☰</div>
-
-<ul class="nav-links">
-<li><a href="#about">About</a></li>
-<li><a href="#programs">Programs</a></li>
-<li><a href="#facilities">Facilities</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-
-</div>
+<!-- ══════════ NAV ══════════ -->
+<nav class="nav">
+  <div class="nav-brand" onclick="showPage('home')">
+    <img src="images/logo-kridens-high.jpg" class="nav-logo-img" alt="Kridens Logo"/>
+    <div class="nav-brand-text">
+      <span class="nav-brand-name">Kridens-Early Childhood Schools</span>
+      <span class="nav-brand-sub">Akure · Ondo State</span>
+    </div>
+  </div>
+  <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+  <div class="nav-links" id="nav-links">
+    <button class="active" onclick="showPage('home')">Home</button>
+    <button onclick="showPage('about')">About</button>
+    <button onclick="showPage('programs')">Programs</button>
+    <button onclick="showPage('contact')">Contact</button>
+  </div>
 </nav>
 
+<!-- ══════════ HOME PAGE ══════════ -->
+<div id="page-home" class="page active">
 
-<section class="hero">
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-logo-circle">
+        <img src="images/logo-kridens-high.jpg" alt="Kridens Logo"/>
+      </div>
+      <h1 class="hero-title">Kridens<span>-Early Childhood</span><br>Schools</h1>
+      <p class="hero-tagline">Nurturing minds · Building futures · Reaching the Heights</p>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="showPage('programs')">Explore Programs</button>
+        <button class="btn-outline" onclick="showPage('contact')">Enroll Now</button>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
 
-<div class="hero-content">
 
-<img src="images/logo-ecms.jpg" class="hero-logo" alt="School Logo">
 
-<h2>Nurturing Future Leaders</h2>
+  <section class="section wings">
+    <div class="section-inner">
+      <div class="section-label">Our Two Wings</div>
+      <h2 class="section-title">Two Schools, <span>One Vision</span></h2>
+      <div class="section-divider"></div>
+      <div class="wings-grid">
+        <div class="wing-card">
+          <div class="wing-banner">
+            <img src="images/hero-children.png" alt="Early Childhood Montessori"/>
+            <div class="wing-banner-overlay">
+              <div class="wing-banner-title">Early Childhood Montessori School</div>
+            </div>
+          </div>
+          <div class="wing-body">
+            <div class="wing-motto">"Centre of Solid Foundation"</div>
+            <p class="wing-desc">Akure's leading Montessori school for young learners. A nurturing, child-centred environment where every child discovers their innate potential from the earliest years.</p>
+            <div class="wing-tags">
+              <span class="tag tag-gold">Crèche</span>
+              <span class="tag tag-gold">Kindergarten</span>
+              <span class="tag tag-gold">Nursery</span>
+              <span class="tag tag-gold">Primary</span>
+            </div>
+          </div>
+        </div>
+        <div class="wing-card">
+          <div class="wing-banner">
+            <img src="images/classroom-teaching.png" alt="Kridens High School"/>
+            <div class="wing-banner-overlay">
+              <div class="wing-banner-title">Kridens High School</div>
+            </div>
+          </div>
+          <div class="wing-body">
+            <div class="wing-motto">"Reaching the Heights"</div>
+            <p class="wing-desc">A forward-thinking secondary school equipping students with academic excellence, strong moral values, and the skills needed to thrive in an ever-changing world.</p>
+            <div class="wing-tags">
+              <span class="tag tag-red">JSS 1–3</span>
+              <span class="tag tag-red">SSS 1–3</span>
+              <span class="tag tag-red">Sciences</span>
+              <span class="tag tag-red">Arts</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<p>One of the leading Montessori Schools in Akure</p>
+  <section class="section why">
+    <div class="section-inner">
+      <div class="section-label">Why Choose Us</div>
+      <h2 class="section-title">A School That <span>Goes Further</span></h2>
+      <div class="section-divider"></div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">🦅</div>
+          <div class="why-title">Proven Montessori Excellence</div>
+          <p class="why-desc">One of Akure's leading Montessori institutions, with a child-first approach that allows learners to explore at their own pace.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🙏</div>
+          <div class="why-title">Faith-Centred Values</div>
+          <p class="why-desc">We nurture students to know their God, fear Him and pray to Him — building character alongside academic achievement.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">💻</div>
+          <div class="why-title">Modern Tech Integration</div>
+          <p class="why-desc">Computer labs, science facilities, and technology-forward programs ensure every student is prepared for the digital age.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🌱</div>
+          <div class="why-title">Whole-Child Development</div>
+          <p class="why-desc">From arts and sports to academics, our holistic approach nurtures every dimension — intellectual, emotional, social, and spiritual.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">📚</div>
+          <div class="why-title">Strong Reading Culture</div>
+          <p class="why-desc">We actively cultivate a love of reading, exposing learners to books and ideas that expand their worldview and sharpen critical thinking.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🏛️</div>
+          <div class="why-title">Civic Responsibility</div>
+          <p class="why-desc">Students are nurtured to respect and obey the laws of the land, becoming responsible, ethical citizens who contribute positively to society.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<a href="#contact" class="btn btn-primary">Enroll Now</a>
+  <div class="gallery-strip">
+    <div class="gallery-strip-inner">
+      <div class="gallery-item">
+        <img src="images/hero-children.png" alt="Children Learning"/>
+        <div class="gallery-item-label">Early Learning</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/science-lab.jpg" alt="Science Lab"/>
+        <div class="gallery-item-label">Science Lab</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/football-field.jpeg" alt="Sports Field"/>
+        <div class="gallery-item-label">Sports Field</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/library-1.png" alt="Library"/>
+        <div class="gallery-item-label">Library</div>
+      </div>
+    </div>
+  </div>
 
-<a href="https://wa.me/2348035039275" class="btn btn-secondary">WhatsApp</a>
+  <div class="cta-band">
+    <h2>Begin Your Child's Journey Today</h2>
+    <p>Join the growing family of parents who trust Kridens-Early Childhood Schools to build a solid foundation for their children's future.</p>
+    <button class="btn-primary" onclick="showPage('contact')">Contact Us to Enroll</button>
+  </div>
 
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="images/logo-kridens-high.jpg" alt="Kridens Logo"/>
+        <h3>Kridens-Early Childhood Schools</h3>
+        <p>Providing quality Montessori and secondary education in Akure, Ondo State. Nurturing minds, building character, and reaching the heights.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><button onclick="showPage('home')">Home</button></li>
+          <li><button onclick="showPage('about')">About Us</button></li>
+          <li><button onclick="showPage('programs')">Programs</button></li>
+          <li><button onclick="showPage('contact')">Contact</button></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>Kridens Avenue, Igbatoro<br>Akure, Ondo State<br>Nigeria<br><br>📱 08035039275<br>📘 ECMS on Facebook</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Kridens-Early Childhood Schools. All Rights Reserved.</span>
+      <span>Akure · Ondo State · Nigeria</span>
+    </div>
+  </footer>
 </div>
 
-</section>
+<!-- ══════════ ABOUT PAGE ══════════ -->
+<div id="page-about" class="page">
 
+  <div class="page-hero" style="background-image:linear-gradient(135deg,rgba(13,27,42,0.92),rgba(183,28,28,0.6)),url('images/classroom-teaching.png');">
+    <div class="page-hero-content">
+      <h1>About Our School</h1>
+      <p>A Legacy of Excellence in Akure, Ondo State</p>
+    </div>
+  </div>
 
-<section class="about" id="about">
+  <section class="about-story">
+    <div class="about-story-grid">
+      <div class="about-story-img">
+        <img src="images/hero-campus-view.jpg" alt="Kridens Campus"/>
+      </div>
+      <div class="about-story-text">
+        <div class="section-label">Our Story</div>
+        <h2 class="section-title">A School Built on <span>Solid Foundation</span></h2>
+        <div class="section-divider"></div>
+        <p>Kridens-Early Childhood Schools is one of the leading Montessori institutions in Akure, Ondo State. Located on Kridens Avenue, Igbatoro, our school has been dedicated to providing exceptional education that blends Montessori philosophy with strong academic rigour and faith-based values.</p>
+        <p>We comprise two distinct wings: the <strong>Early Childhood Montessori School (ECMS)</strong> — serving crèche through primary — and <strong>Kridens High School</strong>, our secondary school. Together, we offer a seamless educational journey from the earliest years through to secondary graduation.</p>
+        <p>Our campus provides a safe, green, and stimulating environment where children are free to grow, explore, and become the best versions of themselves.</p>
+      </div>
+    </div>
+  </section>
 
-<div class="container">
+  <section class="mottos">
+    <div class="section-inner" style="text-align:center;margin-bottom:2.5rem;">
+      <div class="section-label">Our Mottos</div>
+      <h2 class="section-title" style="color:#fff;">Words We <span style="color:var(--gold);">Live By</span></h2>
+      <div class="section-divider" style="margin:0 auto;"></div>
+    </div>
+    <div class="mottos-grid">
+      <div class="motto-card">
+        <div class="motto-school">Early Childhood Montessori School</div>
+        <div class="motto-text">"Centre of Solid Foundation"</div>
+        <div class="motto-line"></div>
+      </div>
+      <div class="motto-card">
+        <div class="motto-school">Kridens High School</div>
+        <div class="motto-text">"Reaching the Heights"</div>
+        <div class="motto-line"></div>
+      </div>
+    </div>
+  </section>
 
-<h2 class="section-title">About Kridens Schools</h2>
+  <section class="values">
+    <div class="section-inner">
+      <div class="section-label">What We Stand For</div>
+      <h2 class="section-title">Our Core <span>Values</span></h2>
+      <div class="section-divider"></div>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-num">01</div>
+          <div class="value-text"><h4>Classroom Excellence</h4><p>We enable good classroom management skills which ensures good behaviour, effective study and strong work habits in every learner.</p></div>
+        </div>
+        <div class="value-card">
+          <div class="value-num">02</div>
+          <div class="value-text"><h4>Future Readiness</h4><p>We develop learners for future challenges — academically, technologically, and emotionally — so they are equipped to thrive in any environment.</p></div>
+        </div>
+        <div class="value-card">
+          <div class="value-num">03</div>
+          <div class="value-text"><h4>Individual Identity</h4><p>Pupils and students are encouraged to explore their own personalities, celebrating what makes each child uniquely gifted.</p></div>
+        </div>
+        <div class="value-card">
+          <div class="value-num">04</div>
+          <div class="value-text"><h4>Self-Discovery</h4><p>Learners are encouraged to discover themselves, unlocking their inner strengths so they can achieve their optimum potential in life.</p></div>
+        </div>
+        <div class="value-card">
+          <div class="value-num">05</div>
+          <div class="value-text"><h4>Faith & Spirituality</h4><p>Students are nurtured to know their God, fear Him and pray to Him — building a spiritual anchor that guides their character.</p></div>
+        </div>
+        <div class="value-card">
+          <div class="value-num">06</div>
+          <div class="value-text"><h4>Reading & Civic Duty</h4><p>We expose learners to a strong reading culture and nurture them to respect and obey the laws of the land.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<p class="section-subtitle">Excellence from Creche to Secondary School</p>
+  <section class="montessori-section">
+    <div class="montessori-grid">
+      <div class="montessori-img">
+        <img src="images/hero-children.png" alt="Montessori Learning"/>
+      </div>
+      <div class="montessori-text">
+        <div class="section-label" style="color:var(--gold);">Our Philosophy</div>
+        <h2 class="section-title" style="color:#fff;">The Montessori <span style="color:var(--gold);">Approach</span></h2>
+        <div class="section-divider"></div>
+        <p>The Montessori method is a child-centred approach that honours the natural development of children. At Kridens ECMS, we implement this philosophy with care, creating prepared environments where children lead their own learning.</p>
+        <p>Our trained educators act as guides, observing and supporting each child's unique developmental journey rather than imposing a one-size-fits-all curriculum.</p>
+        <div class="montessori-pillars">
+          <div class="pillar"><div class="pillar-dot"></div><span>Child-led, self-paced learning</span></div>
+          <div class="pillar"><div class="pillar-dot"></div><span>Hands-on, materials-based exploration</span></div>
+          <div class="pillar"><div class="pillar-dot"></div><span>Mixed-age group collaboration</span></div>
+          <div class="pillar"><div class="pillar-dot"></div><span>Intrinsic motivation over external rewards</span></div>
+          <div class="pillar"><div class="pillar-dot"></div><span>Respect for the whole child</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<div class="about-grid">
-
-<div class="about-card">
-
-<img src="images/logo-ecms.jpg" alt="ECMS">
-
-<h3>Early Childhood Montessori</h3>
-
-<p>Creche, Kindergarten, Nursery and Primary education using Montessori methods.</p>
-
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="images/logo-kridens-high.jpg" alt="Kridens Logo"/>
+        <h3>Kridens-Early Childhood Schools</h3>
+        <p>Providing quality Montessori and secondary education in Akure, Ondo State.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><button onclick="showPage('home')">Home</button></li>
+          <li><button onclick="showPage('about')">About Us</button></li>
+          <li><button onclick="showPage('programs')">Programs</button></li>
+          <li><button onclick="showPage('contact')">Contact</button></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>Kridens Avenue, Igbatoro<br>Akure, Ondo State<br>Nigeria<br><br>📱 08035039275</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Kridens-Early Childhood Schools. All Rights Reserved.</span>
+      <span>Akure · Ondo State · Nigeria</span>
+    </div>
+  </footer>
 </div>
 
-<div class="about-card">
+<!-- ══════════ PROGRAMS PAGE ══════════ -->
+<div id="page-programs" class="page">
 
-<img src="images/logo-kridens-high.jpg" alt="High School">
+  <div class="page-hero" style="background-image:linear-gradient(135deg,rgba(13,27,42,0.9),rgba(183,28,28,0.65)),url('images/science-lab.jpg');">
+    <div class="page-hero-content">
+      <h1>Our Programs</h1>
+      <p>From Crèche to Secondary — A Complete Education</p>
+    </div>
+  </div>
 
-<h3>Kridens High School</h3>
+  <section class="ecms-section">
+    <div class="section-inner">
+      <div class="ecms-header">
+        <div class="ecms-logo-wrap">
+          <img src="images/logo-ecms.jpg" alt="ECMS Logo"/>
+        </div>
+        <div class="ecms-header-text">
+          <h2>Early Childhood Montessori School (ECMS)</h2>
+          <p>"Centre of Solid Foundation" — Nurture Your Child</p>
+        </div>
+      </div>
+      <div class="section-label">School Levels</div>
+      <h2 class="section-title">Learning at <span>Every Stage</span></h2>
+      <div class="section-divider"></div>
+      <div class="levels-grid">
+        <div class="level-card">
+          <div class="level-icon">👶</div>
+          <div class="level-name">Crèche</div>
+          <div class="level-ages">Ages 0–2</div>
+          <p class="level-desc">Safe, loving care for infants in a stimulating environment that supports early brain development.</p>
+        </div>
+        <div class="level-card">
+          <div class="level-icon">🌸</div>
+          <div class="level-name">Kindergarten</div>
+          <div class="level-ages">Ages 3–4</div>
+          <p class="level-desc">Play-based Montessori learning that builds social skills, language, and early numeracy.</p>
+        </div>
+        <div class="level-card">
+          <div class="level-icon">🌿</div>
+          <div class="level-name">Nursery</div>
+          <div class="level-ages">Ages 4–5</div>
+          <p class="level-desc">Structured exploration that prepares children for formal learning through hands-on activities.</p>
+        </div>
+        <div class="level-card">
+          <div class="level-icon">📖</div>
+          <div class="level-name">Primary</div>
+          <div class="level-ages">Ages 6–11</div>
+          <p class="level-desc">A rich academic curriculum that builds strong foundations in literacy, numeracy, science, and the arts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<p>Preparing students academically and morally for future success.</p>
+  <section class="high-section">
+    <div class="section-inner">
+      <div class="high-header">
+        <div class="high-logo-wrap">
+          <img src="images/logo-kridens-high.jpg" alt="Kridens High Logo"/>
+        </div>
+        <div class="high-header-text">
+          <h2>Kridens High School</h2>
+          <p>"Reaching the Heights" — Secondary Education</p>
+        </div>
+      </div>
+      <div class="section-label" style="color:var(--gold);">Secondary Programs</div>
+      <h2 class="section-title" style="color:#fff;">Equipping the <span style="color:var(--gold);">Next Generation</span></h2>
+      <div class="section-divider"></div>
+      <div class="high-grid">
+        <div class="high-card">
+          <div class="high-card-img"><img src="images/classroom-teaching.png" alt="Academic Excellence"/></div>
+          <div class="high-card-body">
+            <h3>Academic Excellence</h3>
+            <p>Rigorous JSS and SSS curricula delivered by passionate educators, preparing students for WAEC, NECO, and others with confidence.</p>
+          </div>
+        </div>
+        <div class="high-card">
+          <div class="high-card-img"><img src="images/science-lab.jpg" alt="Science & Technology"/></div>
+          <div class="high-card-body">
+            <h3>Science & Technology</h3>
+            <p>Fully equipped science laboratories and computer facilities where students engage in practical, discovery-driven learning.</p>
+          </div>
+        </div>
+        <div class="high-card">
+          <div class="high-card-img"><img src="images/football-field.jpeg" alt="Sports & Recreation"/></div>
+          <div class="high-card-body">
+            <h3>Sports & Recreation</h3>
+            <p>Football fields, athletics, and extracurricular programmes that develop teamwork, discipline, and physical wellness.</p>
+          </div>
+        </div>
+        <div class="high-card">
+          <div class="high-card-img"><img src="images/computer-lab.jpg" alt="ICT"/></div>
+          <div class="high-card-body">
+            <h3>ICT & Computer Studies</h3>
+            <p>Modern computers and internet access in a supervised lab — preparing every student for a technology-driven future.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <section class="facilities">
+    <div class="section-inner">
+      <div class="section-label">Campus Life</div>
+      <h2 class="section-title">World-Class <span>Facilities</span></h2>
+      <div class="section-divider"></div>
+      <div class="facilities-grid">
+        <div class="facility-card">
+          <div class="facility-img"><img src="images/library-1.png" alt="Library"/></div>
+          <div class="facility-body"><h3>📚 Well-Stocked Library</h3><p>A quiet, organised reading space filled with books that cultivate our students' love for reading and independent research.</p></div>
+        </div>
+        <div class="facility-card">
+          <div class="facility-img"><img src="images/computer-lab.jpg" alt="Computer Lab"/></div>
+          <div class="facility-body"><h3>💻 Computer Laboratory</h3><p>Modern computers and internet access in a supervised lab — preparing students for a technology-driven future.</p></div>
+        </div>
+        <div class="facility-card">
+          <div class="facility-img"><img src="images/science-lab.jpg" alt="Science Lab"/></div>
+          <div class="facility-body"><h3>🔬 Science Laboratory</h3><p>A fully equipped lab where students conduct experiments and develop a passion for science and discovery.</p></div>
+        </div>
+        <div class="facility-card">
+          <div class="facility-img"><img src="images/football-field.jpeg" alt="Sports Field"/></div>
+          <div class="facility-body"><h3>⚽ Sports Complex</h3><p>Football fields and open sports areas where students develop physical fitness, teamwork, and competitive spirit.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="images/logo-kridens-high.jpg" alt="Kridens Logo"/>
+        <h3>Kridens-Early Childhood Schools</h3>
+        <p>Providing quality Montessori and secondary education in Akure, Ondo State.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><button onclick="showPage('home')">Home</button></li>
+          <li><button onclick="showPage('about')">About Us</button></li>
+          <li><button onclick="showPage('programs')">Programs</button></li>
+          <li><button onclick="showPage('contact')">Contact</button></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>Kridens Avenue, Igbatoro<br>Akure, Ondo State<br>Nigeria<br><br>📱 08035039275</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Kridens-Early Childhood Schools. All Rights Reserved.</span>
+      <span>Akure · Ondo State · Nigeria</span>
+    </div>
+  </footer>
 </div>
 
-<div class="about-card">
+<!-- ══════════ CONTACT PAGE ══════════ -->
+<div id="page-contact" class="page">
 
-<img src="images/classroom-teaching.png" alt="Teaching">
+  <div class="page-hero" style="background-image:linear-gradient(135deg,rgba(13,27,42,0.93),rgba(183,28,28,0.7)),url('images/hero-campus-view.jpg');">
+    <div class="page-hero-content">
+      <h1>Get In Touch</h1>
+      <p>We'd love to welcome your child to our family</p>
+    </div>
+  </div>
 
-<h3>Excellent Teaching</h3>
+  <section class="contact-body">
+    <div class="contact-grid">
+      <div class="contact-info-block">
+        <h2>Contact Kridens Schools</h2>
+        <div class="info-item">
+          <div class="info-icon">📍</div>
+          <div class="info-text">
+            <h4>Address</h4>
+            <p>Kridens Avenue, Igbatoro<br>Akure, Ondo State, Nigeria</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">📱</div>
+          <div class="info-text">
+            <h4>Phone / WhatsApp</h4>
+            <p>08035039275<br>Available Mon–Fri, 7:30am–4pm</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">📘</div>
+          <div class="info-text">
+            <h4>Facebook Page</h4>
+            <p>ECMS (Early Childhood Montessori School)<br>Search "ECMS" on Facebook</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">🕐</div>
+          <div class="info-text">
+            <h4>School Hours</h4>
+            <p>Monday – Friday: 7:30am – 3:30pm<br>Office: 8:00am – 4:00pm</p>
+          </div>
+        </div>
+        <a class="wa-btn" href="https://wa.me/2348035039275" target="_blank">
+          💬 &nbsp;Chat on WhatsApp
+        </a>
+      </div>
 
-<p>Experienced teachers providing quality education.</p>
+      <div class="contact-form-wrap">
+        <h2>Send Us a Message</h2>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Parent/Guardian Name</label>
+            <input type="text" id="f-name" placeholder="Your full name"/>
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" id="f-phone" placeholder="08012345678"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" id="f-email" placeholder="you@example.com"/>
+        </div>
+        <div class="form-group">
+          <label>Child's Level of Interest</label>
+          <select id="f-level">
+            <option value="">Select a program...</option>
+            <option>Crèche (0–2 years)</option>
+            <option>Kindergarten (3–4 years)</option>
+            <option>Nursery (4–5 years)</option>
+            <option>Primary (6–11 years)</option>
+            <option>Secondary / Kridens High School</option>
+            <option>General Enquiry</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea id="f-message" placeholder="Tell us about your child or ask any question..."></textarea>
+        </div>
+        <button class="form-submit" onclick="submitForm()">Send Message</button>
+        <div class="success-msg" id="success-msg">✅ Thank you! We'll be in touch within 24 hours.</div>
+      </div>
+    </div>
+  </section>
 
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="images/logo-kridens-high.jpg" alt="Kridens Logo"/>
+        <h3>Kridens-Early Childhood Schools</h3>
+        <p>Providing quality Montessori and secondary education in Akure, Ondo State.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><button onclick="showPage('home')">Home</button></li>
+          <li><button onclick="showPage('about')">About Us</button></li>
+          <li><button onclick="showPage('programs')">Programs</button></li>
+          <li><button onclick="showPage('contact')">Contact</button></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>Kridens Avenue, Igbatoro<br>Akure, Ondo State<br>Nigeria<br><br>📱 08035039275</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Kridens-Early Childhood Schools. All Rights Reserved.</span>
+      <span>Akure · Ondo State · Nigeria</span>
+    </div>
+  </footer>
 </div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<section id="programs">
-
-<div class="container">
-
-<h2 class="section-title">Our Programs</h2>
-
-<div class="programs-container">
-
-<div class="program-card">
-
-<img src="images/hero-children.png" alt="Early Education">
-
-<div class="program-content">
-
-<h3>Early Childhood</h3>
-
-<p>Creche, Kindergarten, Nursery and Primary levels.</p>
-
-</div>
-
-</div>
-
-<div class="program-card">
-
-<img src="images/classroom-teaching.png" alt="Secondary">
-
-<div class="program-content">
-
-<h3>Secondary School</h3>
-
-<p>Junior and Senior Secondary education with strong academics.</p>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<section id="facilities">
-
-<div class="container">
-
-<h2 class="section-title">Facilities</h2>
-
-<div class="facilities-grid">
-
-<div class="facility-card">
-
-<img src="images/science-lab.jpg" alt="Science Lab">
-
-<div class="facility-overlay">Science Laboratory</div>
-
-</div>
-
-<div class="facility-card">
-
-<img src="images/library-1.png" alt="Library">
-
-<div class="facility-overlay">Library</div>
-
-</div>
-
-<div class="facility-card">
-
-<img src="images/computer-lab.jpg" alt="Computer Lab">
-
-<div class="facility-overlay">ICT Lab</div>
-
-</div>
-
-<div class="facility-card">
-
-<img src="images/football-field.jpeg" alt="Football Field">
-
-<div class="facility-overlay">Sports Field</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<section class="contact" id="contact">
-
-<div class="container">
-
-<h2 class="section-title">Contact Us</h2>
-
-<div class="contact-grid">
-
-<div class="contact-box">
-
-<h3>Address</h3>
-
-<p>Kridens Avenue, Igbatoro<br>Akure, Ondo State</p>
-
-<p>📞 0803 503 9275</p>
-
-</div>
-
-<div class="contact-box">
-
-<h3>Chat With Us</h3>
-
-<a href="https://wa.me/2348035039275" class="btn btn-primary">WhatsApp</a>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<footer>
-
-<p>© 2026 Kridens Schools</p>
-
-</footer>
-
 
 <script>
-
-const menu=document.querySelector(".mobile-menu")
-const links=document.querySelector(".nav-links")
-
-menu.onclick=()=>{
-links.style.display=links.style.display==="flex"?"none":"flex"
+function showPage(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active');
+  const labels={home:'Home',about:'About',programs:'Programs',contact:'Contact'};
+  document.querySelectorAll('.nav-links button').forEach(btn=>{
+    btn.classList.toggle('active',btn.textContent.trim()===labels[id]);
+  });
+  document.getElementById('nav-links').classList.remove('open');
+  window.scrollTo({top:0,behavior:'smooth'});
 }
-
+function toggleMenu(){
+  document.getElementById('nav-links').classList.toggle('open');
+}
+function submitForm(){
+  const name=document.getElementById('f-name').value.trim();
+  const phone=document.getElementById('f-phone').value.trim();
+  if(!name||!phone){alert('Please fill in your name and phone number.');return;}
+  document.getElementById('f-name').value='';
+  document.getElementById('f-phone').value='';
+  document.getElementById('f-email').value='';
+  document.getElementById('f-level').value='';
+  document.getElementById('f-message').value='';
+  const msg=document.getElementById('success-msg');
+  msg.style.display='block';
+  setTimeout(()=>msg.style.display='none',6000);
+}
 </script>
-
 </body>
 </html>
