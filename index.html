@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kridens Early Childhood Schools | Akure</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI, sans-serif;
+}
+
+:root{
+--blue:#1e3a8a;
+--gold:#f59e0b;
+--green:#10b981;
+--light:#f8fafc;
+}
+
+body{
+line-height:1.6;
+overflow-x:hidden;
+}
+
+/* NAV */
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+background:white;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+z-index:1000;
+}
+
+.nav-container{
+max-width:1200px;
+margin:auto;
+padding:15px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.logo img{
+height:55px;
+}
+
+.nav-links{
+display:flex;
+gap:25px;
+list-style:none;
+}
+
+.nav-links a{
+text-decoration:none;
+color:#333;
+font-weight:600;
+}
+
+.mobile-menu{
+display:none;
+cursor:pointer;
+font-size:24px;
+}
+
+/* HERO */
+
+.hero{
+margin-top:80px;
+min-height:90vh;
+
+background:
+linear-gradient(rgba(30,58,138,.8),rgba(30,58,138,.6)),
+url("images/hero-campus-view.jpg");
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+}
+
+.hero-content{
+max-width:850px;
+padding:30px;
+}
+
+.hero-logo{
+width:120px;
+margin-bottom:20px;
+background:white;
+border-radius:50%;
+padding:10px;
+}
+
+.hero h2{
+font-size:3rem;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:1.2rem;
+margin-bottom:25px;
+}
+
+.btn{
+padding:14px 28px;
+border:none;
+border-radius:30px;
+text-decoration:none;
+font-weight:600;
+display:inline-block;
+}
+
+.btn-primary{
+background:var(--gold);
+color:white;
+}
+
+.btn-secondary{
+border:2px solid white;
+color:white;
+}
+
+/* SECTIONS */
+
+section{
+padding:70px 20px;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+}
+
+.section-title{
+text-align:center;
+font-size:2.4rem;
+color:var(--blue);
+margin-bottom:15px;
+}
+
+.section-subtitle{
+text-align:center;
+margin-bottom:40px;
+color:#666;
+}
+
+/* ABOUT */
+
+.about{
+background:var(--light);
+}
+
+.about-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.about-card{
+background:white;
+padding:30px;
+border-radius:12px;
+text-align:center;
+box-shadow:0 4px 12px rgba(0,0,0,0.08);
+}
+
+.about-card img{
+width:110px;
+margin-bottom:15px;
+}
+
+/* PROGRAMS */
+
+.programs-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(330px,1fr));
+gap:30px;
+}
+
+.program-card{
+background:white;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 8px 20px rgba(0,0,0,0.1);
+}
+
+.program-card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.program-content{
+padding:25px;
+}
+
+/* FACILITIES */
+
+.facilities-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.facility-card{
+height:250px;
+overflow:hidden;
+border-radius:10px;
+position:relative;
+}
+
+.facility-card img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.facility-overlay{
+position:absolute;
+bottom:0;
+width:100%;
+padding:20px;
+color:white;
+background:linear-gradient(transparent,rgba(0,0,0,0.8));
+}
+
+/* CONTACT */
+
+.contact{
+background:var(--light);
+}
+
+.contact-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+}
+
+.contact-box{
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* FOOTER */
+
+footer{
+background:#0f172a;
+color:white;
+padding:40px 20px;
+text-align:center;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.nav-links{
+display:none;
+flex-direction:column;
+background:white;
+position:absolute;
+top:70px;
+right:0;
+width:200px;
+padding:20px;
+}
+
+.mobile-menu{
+display:block;
+}
+
+.hero h2{
+font-size:2rem;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="nav-container">
+
+<div class="logo">
+<img src="images/logo-ecms.jpg" alt="Kridens Logo">
+<strong>Kridens Schools</strong>
+</div>
+
+<div class="mobile-menu">☰</div>
+
+<ul class="nav-links">
+<li><a href="#about">About</a></li>
+<li><a href="#programs">Programs</a></li>
+<li><a href="#facilities">Facilities</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</div>
+</nav>
+
+
+<section class="hero">
+
+<div class="hero-content">
+
+<img src="images/logo-ecms.jpg" class="hero-logo" alt="School Logo">
+
+<h2>Nurturing Future Leaders</h2>
+
+<p>One of the leading Montessori Schools in Akure</p>
+
+<a href="#contact" class="btn btn-primary">Enroll Now</a>
+
+<a href="https://wa.me/2348035039275" class="btn btn-secondary">WhatsApp</a>
+
+</div>
+
+</section>
+
+
+<section class="about" id="about">
+
+<div class="container">
+
+<h2 class="section-title">About Kridens Schools</h2>
+
+<p class="section-subtitle">Excellence from Creche to Secondary School</p>
+
+<div class="about-grid">
+
+<div class="about-card">
+
+<img src="images/logo-ecms.jpg" alt="ECMS">
+
+<h3>Early Childhood Montessori</h3>
+
+<p>Creche, Kindergarten, Nursery and Primary education using Montessori methods.</p>
+
+</div>
+
+<div class="about-card">
+
+<img src="images/logo-kridens-high.jpg" alt="High School">
+
+<h3>Kridens High School</h3>
+
+<p>Preparing students academically and morally for future success.</p>
+
+</div>
+
+<div class="about-card">
+
+<img src="images/classroom-teaching.png" alt="Teaching">
+
+<h3>Excellent Teaching</h3>
+
+<p>Experienced teachers providing quality education.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="programs">
+
+<div class="container">
+
+<h2 class="section-title">Our Programs</h2>
+
+<div class="programs-container">
+
+<div class="program-card">
+
+<img src="images/hero-children.png" alt="Early Education">
+
+<div class="program-content">
+
+<h3>Early Childhood</h3>
+
+<p>Creche, Kindergarten, Nursery and Primary levels.</p>
+
+</div>
+
+</div>
+
+<div class="program-card">
+
+<img src="images/classroom-teaching.png" alt="Secondary">
+
+<div class="program-content">
+
+<h3>Secondary School</h3>
+
+<p>Junior and Senior Secondary education with strong academics.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="facilities">
+
+<div class="container">
+
+<h2 class="section-title">Facilities</h2>
+
+<div class="facilities-grid">
+
+<div class="facility-card">
+
+<img src="images/science-lab.jpg" alt="Science Lab">
+
+<div class="facility-overlay">Science Laboratory</div>
+
+</div>
+
+<div class="facility-card">
+
+<img src="images/library-1.png" alt="Library">
+
+<div class="facility-overlay">Library</div>
+
+</div>
+
+<div class="facility-card">
+
+<img src="images/computer-lab.jpg" alt="Computer Lab">
+
+<div class="facility-overlay">ICT Lab</div>
+
+</div>
+
+<div class="facility-card">
+
+<img src="images/football-field.jpeg" alt="Football Field">
+
+<div class="facility-overlay">Sports Field</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="contact" id="contact">
+
+<div class="container">
+
+<h2 class="section-title">Contact Us</h2>
+
+<div class="contact-grid">
+
+<div class="contact-box">
+
+<h3>Address</h3>
+
+<p>Kridens Avenue, Igbatoro<br>Akure, Ondo State</p>
+
+<p>📞 0803 503 9275</p>
+
+</div>
+
+<div class="contact-box">
+
+<h3>Chat With Us</h3>
+
+<a href="https://wa.me/2348035039275" class="btn btn-primary">WhatsApp</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<p>© 2026 Kridens Schools</p>
+
+</footer>
+
+
+<script>
+
+const menu=document.querySelector(".mobile-menu")
+const links=document.querySelector(".nav-links")
+
+menu.onclick=()=>{
+links.style.display=links.style.display==="flex"?"none":"flex"
+}
+
+</script>
+
+</body>
+</html>
